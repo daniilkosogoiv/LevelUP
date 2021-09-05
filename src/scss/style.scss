@@ -1,8 +1,472 @@
-.main {
-    &__css {
-        background-color: green;
-        width: 100%;
-        height: 100%;
+//vars
+$bg: rgb(46, 46, 46);
+$bgtwo: #191970;
+$text: #DCDCDC;
+
+/**/
+
+//setting page
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background: $bg;
+}
+
+//1140px width
+.container {
+    max-width: 1160px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+//head
+.header {
+    background: $bg;
+    color: $text;
+    padding: 15px 0;
+    &__element {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
+}
+
+.logo__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: $text;
+}
+
+.logo__link {
+    text-decoration: none;
+}
+
+//navigation
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__link {
+        text-decoration: none;
+        color: $text;
+        font-size: 16px;
+        font-weight: normal;
+        font-family: serif;
+        padding: 10px 15px;
+        border: 1px solid $bg;
+        transition: all .1s linear;
+        margin: 0 0 0 10px;
+        &:not(:last-child) {
+            margin: 0 10px;
+        }
+        &:hover {
+            color: #000;
+            border: 1px solid $text;
+            background: $text;
+        }
+    }
+}
+
+//setting video
+.bgvideo {
+    display: block;
+    position: relative;
+    z-index: 0;
+    margin: 0 auto;
+    width: 125%;
+}
+
+.block {
+    position: absolute;
+    overflow: hidden;
+    z-index: -999;
+    min-height: 870px;
+    max-height: 870px;
+    display: block;
+    width: 100%;
+}
+
+.product__logo {
+    max-height: 320px;
+}
+
+.wrap {
+    height: 100%;
+}
+
+//block 1
+.main {
+    width: 100%;
+    height: calc(100vh - 85px);
+    background: rgba($color: #000000, $alpha: .6);
+    //title
+    &__text {
+        width: 100%;
+        text-align: center;
+        color: $text;
+        padding: 30px 0 20px;
+        border-bottom: 1px solid $text;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    &__item {
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: calc(100% - 115px);
+    }
+    &__product {
+        margin: 0 50px;
+    }
+}
+
+//list style 
+.spec {
+    list-style: none;
+}
+
+.features {
+    color: $text;
+    font-size: 18px;
+    margin: 0 0 0 60px;
+    &:not(:last-child) {
+        padding: 0 0 20px;
+    }
+}
+
+.fa-check-square {
+    padding: 0 10px 0 0;
+}
+
+.bl {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button {
+    border: 1px solid $bg;
+    background: $bg;
+    padding: 15px 25px;
+    margin: 30px 0 0 70px;
+    color: $text;
+    font-size: 18px;
+    font-weight: 300;
+    transition: all .1s linear;
+    cursor: pointer;
+    &:hover {
+        background: $text;
+        border: 1px solid $text;
+        color: $bg;
+    }
+}
+
+.structure {
+    background: linear-gradient(to top, $bg, $bgtwo);
+    color: $text;
+}
+
+.information {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px 0 0;
+    &__item {
+        max-width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 30px;
+    }
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.item__product {
+    height: 164px;
+    width: 164px;
+    border-radius: 50%;
+    border: 2px solid $text;
+}
+
+.structure__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 30px 0 5px;
+    font-size: 28px;
+}
+
+.button-two {
+    background: $text;
+    border: 1px solid $text;
+    color: $bg;
+    padding: 15px 25px;
+    margin: 30px 0 0;
+    font-size: 18px;
+    font-weight: 300;
+    transition: all .1s linear;
+    cursor: pointer;
+    &:hover {
+        border: 1px solid $bg;
+        background: $bg;
+        color: $text;
+    }
+}
+
+//three page
+.reviews {
+    background: linear-gradient(to top, $bgtwo, 20%, $bg);
+}
+
+//carousel
+.reviews__title {
+    margin-top: 30px;
+    text-align: center;
+    color: $text;
+    font-size: 28px;
+}
+
+.reviews__wrap {
+    max-width: 800px;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.scroller {
+    overflow-x: scroll;
+    display: flex;
+}
+
+.item {
+    min-width: 100%;
+    scroll-snap-align: center;
+    margin-bottom: 10px;
+    padding: 0 50px;
+}
+
+.item img {
+    margin: 15px auto -60px;
+    width: 120px;
+    height: 120px;
+    border: solid 4px #ffffff;
+    border-radius: 60px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.card {
+    background-color: $bg;
+    padding: 80px 40px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.card p {
+    font-style: italic;
+    line-height: 1.6;
+    color: $text;
+}
+
+.card span {
+    display: block;
+    margin-top: 20px;
+    color: $text;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.reviews__wrap .btn {
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background-color: rgba(95, 106, 117, 0.3);
+    z-index: 1;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.reviews__wrap .btn:hover {
+    background-color: rgba(95, 106, 117, 0.5);
+    cursor: pointer;
+}
+
+.reviews__wrap .btn.next {
+    right: 15px;
+}
+
+.reviews__wrap .btn.prev {
+    left: 15px;
+}
+
+@media screen and (max-width: 480px) {
+    .item {
+        padding: 0 30px;
+    }
+    .card {
+        padding: 80px 30px 30px;
+    }
+}
+
+//four page
+.promo {
+    background: linear-gradient($bgtwo, 10%, $bg);
+    padding: 50px 0 0;
+    &__title {
+        color: $text;
+        font-size: 28px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 15px 0 35px;
+    }
+}
+
+.top__element {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.doctor__info {
+    max-width: 320px;
+    border: 1px solid $bg;
+    background-color: $bg;
+    color: $text;
+    border-radius: 10px;
+    padding: 50px 15px;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.low__element {
+    width: 100%;
+}
+
+.title__char {
+    color: $text;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 35px 0;
+}
+
+.property__prod {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    color: $text;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.prod__in:not(:last-child) {
+    padding: 0 35px 0 0;
+}
+
+.fa-check-double {
+    padding: 0 10px 0 0;
+}
+
+//five page 
+.order {
+    background: linear-gradient(to top, $bgtwo, 20%, $bg);
+    &__title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: 700;
+        padding: 80px 0 20px;
+        color: $text;
+    }
+    &__item {
+        max-width: 350px;
+        padding: 20px 0 0 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__img {
+        height: 200px;
+    }
+    &__price {
+        margin: 15px 0 0;
+        &-old {
+            position: relative;
+            color: $text;
+            font-size: 28px;
+            padding: 0 0 0 25px;
+            font-weight: 700;
+            &:before {
+                border-bottom: 3px solid red;
+                position: absolute;
+                content: "";
+                width: 90%;
+                height: 65%;
+                transform: rotate(-12deg);
+            }
+        }
+        &-new {
+            color: $text;
+            font-size: 35px;
+            font-weight: 700;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        input {
+            width: 220px;
+            border: 2px solid $bg;
+            border-radius: 15px;
+            padding: 10px 0 10px 15px;
+            margin: 0 0 15px;
+        }
+        button {
+            border: 2px solid $bg;
+            border-radius: 15px;
+            padding: 10px 0 10px 15px;
+            background: $bg;
+            color: $text;
+            transition: all .1s linear;
+            &:hover {
+                color: $bg;
+                background: $text;
+            }
+        }
+    }
+}
+
+.time {
+    text-align: center;
+    color: $text;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px 0 0;
 }
