@@ -7,6 +7,10 @@
           box-sizing: border-box;
 }
 
+.menu {
+  display: none;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background: #2e2e2e;
@@ -565,6 +569,99 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 50px 0 0;
+}
+
+.endsale {
+  padding: 15px;
+}
+
+@media screen and (max-width: 1150px) {
+  .main__item {
+    height: calc(540px - 115px);
+  }
+
+  .main {
+    height: 100%;
+  }
+
+  .logo__product {
+    height: 320px;
+  }
+
+  .item__product {
+    height: 100px;
+    width: 100px;
+  }
+
+  .text__prod {
+    padding: 15px 20px;
+    text-align: center;
+  }
+
+  .doctor__img {
+    height: 340px;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  .product__logo {
+    height: 120px;
+  }
+
+  .main__product {
+    margin: 0 15px;
+  }
+
+  .features {
+    font-size: 14px;
+  }
+
+  .button {
+    margin: 14px 0 0 56px;
+  }
+
+  .logo__product {
+    height: 120px;
+  }
+
+  .item__product {
+    height: 90px;
+    width: 90px;
+  }
+
+  .doctor__img {
+    height: 150px;
+  }
+
+  .top__element {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .time {
+    display: none;
+  }
+
+  .order__form {
+    margin: 25px 0 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menu {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 480px) {

@@ -37,7 +37,7 @@
                             </ul>
                         </div>
                         <div class="btn">
-                            <button id="anchor" class="button">Заказать</button>
+                            <a href="#ord" class="ordscroll"><button id="anchor" class="button">Заказать</button></a>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                         <img src="img/prod.png" alt="" class="logo__product">
                     </div>
                     <div class="btn">
-                        <button id="anchor" class="button-two">Заказать</button>
+                        <a class="ordscroll" href="#ord"><button id="anchor" class="button-two">Заказать</button></a>
                     </div>
                 </div>
                 <div class="information__right">
@@ -165,7 +165,13 @@
 
                 <div class="time">
 
+
+                    <h1 class="endsale">До конца акции:</h1>
+                    <script src="//megatimer.ru/get/60a97dfa4fc41de0bcc1c0889d3be835.js"></script>
                 </div>
+
+
+
 
 
 
@@ -177,7 +183,7 @@
                             <span class="order__price-old">750$</span>
                         </div>
                     </div>
-                    <form action="/" method="POST" class="order__form">
+                    <form id="ord" action="/" method="POST" class="order__form">
                         <input type="text" placeholder="Name" required>
                         <input type="number" placeholder="Phone" required>
                         <button>Заказать</button>
